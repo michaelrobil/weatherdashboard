@@ -14,7 +14,7 @@ var existing = {};
 //API calls
 function displayWeather() {
 
-    var queryURL = "http://api.openweathermap.org/data/2.5/weather?q=" + city + "&APPID=65bb0a9399a9e35557159693e192db55";
+    var queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&APPID=65bb0a9399a9e35557159693e192db55";
 
     $.ajax({
         url: queryURL,
@@ -34,7 +34,7 @@ function displayWeather() {
         $("#forecast").prepend($("<h4>5 Days Forecast: </h4>"));
 
         $.ajax({
-            url: "http://api.openweathermap.org/data/2.5/uvi?" + "&APPID=65bb0a9399a9e35557159693e192db55" + "&lat=" + response.coord.lat + "&lon=" + response.coord.lon,
+            url: "https://api.openweathermap.org/data/2.5/uvi?" + "&APPID=65bb0a9399a9e35557159693e192db55" + "&lat=" + response.coord.lat + "&lon=" + response.coord.lon,
             method: "GET"
         }).then(function(response) {
             uvIndex = $("<p>" + "UV Index: " + response.value + "</p>");
@@ -42,7 +42,7 @@ function displayWeather() {
         });
 
         $.ajax({
-            url: "http://api.openweathermap.org/data/2.5/forecast?q=" + city + "&APPID=65bb0a9399a9e35557159693e192db55",
+            url: "https://api.openweathermap.org/data/2.5/forecast?q=" + city + "&APPID=65bb0a9399a9e35557159693e192db55",
             method: "GET"
         }).then(function(response) {
             var forecastTimes = ["4", "10", "18", "26", "34"];
