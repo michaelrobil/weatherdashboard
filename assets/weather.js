@@ -10,6 +10,7 @@ var uvIndex;
 var newCityBox;
 var newCityText;
 var newCityBtn;
+var deleteBtn;
 var existing = {};
 //API calls
 function displayWeather() {
@@ -73,9 +74,11 @@ function createNsaveBtn() {
     existing.forEach(function(item) {
         newCityBox = $('<div class=' + item + 'box >').attr("id", "citybox");
         newCityBtn = $('<button>').attr("id", "city").attr("data-name", item);
+        deleteBtn = $('<button>').attr("id", "remove").attr("data-name", item);
+        deleteBtn.append($('<i class="far fa-trash-alt"></i>'));
         (newCityBtn).text(item.charAt(0).toUpperCase() + item.substring(1));
         $("#buttons-view").append(newCityBox);
-        newCityBox.append(newCityBtn);
+        newCityBox.append(newCityBtn, deleteBtn);
     })
 }
 createNsaveBtn();
@@ -85,7 +88,21 @@ $(document).on("click", "#city", function(event) {
     // This line grabs the input from the textbox
     city = event.target.getAttribute('data-name');
     displayWeather();
+
 });
+$(document).on("click", "#remove", function(event) {
+    event.preventDefault();
+    city = event.target.getAttribute('data-name');
+    var string = localStorage.getItem('city');
+    if (string.includes(city + ",")) {
+        string = string.replace(city + ",", "");
+    } else if (string.includes("," + city)) {
+        string = string.replace("," + city, "")
+    } else string.replace(city, "");
+    localStorage.setItem("city", string);
+    $("." + city + "box").empty();
+});
+
 //event listener for submit buttons
 $("#add-city").on("click", function(event) {
     event.preventDefault();

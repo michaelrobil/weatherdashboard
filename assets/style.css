@@ -61,13 +61,27 @@ h5 {
     border-bottom: #fae6c9 2px double;
 }
 
+#remove {
+    border-top-right-radius: 40px;
+    border-bottom-right-radius: 40px;
+    border-bottom-left-radius: 40px;
+    background-color: black;
+    margin: 5px;
+    text-align: center;
+    position: relative;
+    display: inline-block;
+    background-image: linear-gradient(white, #804a00);
+    box-shadow: 0px 1px 4px -2px #333;
+    text-shadow: 0px -1px #333;
+}
+
 #add-city,
 #city {
     border-top-right-radius: 40px;
     border-bottom-right-radius: 40px;
     border-bottom-left-radius: 40px;
     background-color: black;
-    width: 100%;
+    width: 80%;
     margin: 5px;
     padding: 5px 20px;
     text-align: center;
