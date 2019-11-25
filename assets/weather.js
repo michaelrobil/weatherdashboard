@@ -133,6 +133,5 @@ $("#current-city").on("click", function(event) {
 
             }
         });
-
     });
 });
