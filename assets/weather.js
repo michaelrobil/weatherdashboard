@@ -12,6 +12,7 @@ var newCityText;
 var newCityBtn;
 var deleteBtn;
 var existing = {};
+var locationIcon = $("#current-city").append('<i class="fas fa-map-marker-alt"></i>');
 
 //API calls
 // API for daily weather by city

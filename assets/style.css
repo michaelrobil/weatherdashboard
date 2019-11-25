@@ -75,6 +75,12 @@ h5 {
     text-shadow: 0px -1px #333;
 }
 
+.fas {
+    color: #382100;
+    font-size: 20px;
+    margin-left: 45px;
+}
+
 #add-city,
 #current-city,
 #city {
