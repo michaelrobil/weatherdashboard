@@ -14,6 +14,7 @@ var deleteBtn;
 var existing = {};
 
 //API calls
+// API for daily weather by city
 function displayWeather() {
     var queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&APPID=65bb0a9399a9e35557159693e192db55";
     $.ajax({
@@ -40,7 +41,7 @@ function displayWeather() {
         uvIndexValue();
     });
 }
-
+// API for UV Index
 function uvIndexValue() {
     $.ajax({
         url: "https://api.openweathermap.org/data/2.5/uvi?" + "&APPID=65bb0a9399a9e35557159693e192db55" + "&lat=" + latValue + "&lon=" + lonValue,
@@ -50,7 +51,7 @@ function uvIndexValue() {
         $(weatherBox).append(uvIndex);
     });
 }
-
+// API for Forecast
 function forecastValues() {
     $.ajax({
         url: "https://api.openweathermap.org/data/2.5/forecast?q=" + city + "&APPID=65bb0a9399a9e35557159693e192db55",
@@ -68,7 +69,6 @@ function forecastValues() {
         });
     });
 }
-
 //localstorage & adding buttons
 function createNsaveBtn() {
     existing = localStorage.getItem('city');
@@ -94,7 +94,7 @@ $(document).on("click", "#city", function(event) {
     displayWeather();
     forecastValues();
 });
-
+// event listener for delete form localstorage and UI
 $(document).on("click", "#remove", function(event) {
     event.preventDefault();
     city = event.target.getAttribute('data-name');
@@ -118,6 +118,7 @@ $("#add-city").on("click", function(event) {
     $("#buttons-view").empty();
     createNsaveBtn();
 });
+//event listener and function for corrent location weather
 $("#current-city").on("click", function(event) {
     event.preventDefault();
     jQuery(document).ready(function($) {
@@ -130,7 +131,6 @@ $("#current-city").on("click", function(event) {
                 city = currentCity;
                 displayWeather();
                 forecastValues();
-
             }
         });
     });
