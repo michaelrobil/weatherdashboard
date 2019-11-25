@@ -76,6 +76,7 @@ h5 {
 }
 
 #add-city,
+#current-city,
 #city {
     border-top-right-radius: 40px;
     border-bottom-right-radius: 40px;
@@ -92,7 +93,8 @@ h5 {
     text-shadow: 0px -1px #333;
 }
 
-#add-city {
+#add-city,
+#current-city {
     width: 100%;
 }
 

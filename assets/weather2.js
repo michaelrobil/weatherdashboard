@@ -12,10 +12,11 @@ var newCityText;
 var newCityBtn;
 var deleteBtn;
 var existing = {};
-
 //API calls
 function displayWeather() {
+
     var queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&APPID=65bb0a9399a9e35557159693e192db55";
+
     $.ajax({
         url: queryURL,
         method: "GET"
@@ -32,43 +33,38 @@ function displayWeather() {
         $(weatherBox).append(temp, humidity, windSpeed);
         $("#forecast").empty();
         $("#forecast").prepend($("<h4>5 Days Forecast: </h4>"));
-        cityName = $("<h2>" + response.name + " " + today + "</h2>");
-        cityName.append(icon);
-        $(weatherBox).prepend(cityName);
-        latValue = response.coord.lat;
-        lonValue = response.coord.lon;
-        uvIndexValue();
-    });
-}
 
-function uvIndexValue() {
-    $.ajax({
-        url: "https://api.openweathermap.org/data/2.5/uvi?" + "&APPID=65bb0a9399a9e35557159693e192db55" + "&lat=" + latValue + "&lon=" + lonValue,
-        method: "GET"
-    }).then(function(response) {
-        uvIndex = $("<p>" + "UV Index: " + response.value + "</p>");
-        $(weatherBox).append(uvIndex);
-    });
-}
-
-function forecastValues() {
-    $.ajax({
-        url: "https://api.openweathermap.org/data/2.5/forecast?q=" + city + "&APPID=65bb0a9399a9e35557159693e192db55",
-        method: "GET"
-    }).then(function(response) {
-        var forecastTimes = ["4", "10", "18", "26", "34"];
-        forecastTimes.forEach(function(item) {
-            $("#day" + item).empty();
-            var listItem = response.list[item];
-            var dateOne = ((listItem.dt_txt).slice(0, 10));
-            var iconOne = $('<img>').attr('src', `http://openweathermap.org/img/wn/${listItem.weather[0].icon}@2x.png`);
-            var tempOne = $("<p>" + "Temperature: " + Math.round(((listItem.main.temp) - 273.15) * 9 / 5 + 32) + "‎ °F" + "</p>");
-            var humidityOne = $("<p>" + "Humidity: " + listItem.main.humidity + "‎ %" + "</p>");
-            $("#day" + item).append(dateOne, iconOne, tempOne, humidityOne);
+        $.ajax({
+            url: "https://api.openweathermap.org/data/2.5/uvi?" + "&APPID=65bb0a9399a9e35557159693e192db55" + "&lat=" + response.coord.lat + "&lon=" + response.coord.lon,
+            method: "GET"
+        }).then(function(response) {
+            uvIndex = $("<p>" + "UV Index: " + response.value + "</p>");
+            $(weatherBox).append(uvIndex);
         });
+
+        $.ajax({
+            url: "https://api.openweathermap.org/data/2.5/forecast?q=" + city + "&APPID=65bb0a9399a9e35557159693e192db55",
+            method: "GET"
+        }).then(function(response) {
+            var forecastTimes = ["4", "10", "18", "26", "34"];
+
+            forecastTimes.forEach(function(item) {
+                $("#day" + item).empty();
+
+                var listItem = response.list[item];
+                var dateOne = ((listItem.dt_txt).slice(0, 10));
+                var iconOne = $('<img>').attr('src', `http://openweathermap.org/img/wn/${listItem.weather[0].icon}@2x.png`);
+                var tempOne = $("<p>" + "Temperature: " + Math.round(((listItem.main.temp) - 273.15) * 9 / 5 + 32) + "‎ °F" + "</p>");
+                var humidityOne = $("<p>" + "Humidity: " + listItem.main.humidity + "‎ %" + "</p>");
+                $("#day" + item).append(dateOne, iconOne, tempOne, humidityOne);
+            });
+            cityName = $("<h2>" + response.city.name + " " + today + "</h2>");
+            cityName.append(icon);
+            $(weatherBox).prepend(cityName);
+        });
+
     });
 }
-
 //localstorage & adding buttons
 function createNsaveBtn() {
     existing = localStorage.getItem('city');
@@ -92,9 +88,8 @@ $(document).on("click", "#city", function(event) {
     // This line grabs the input from the textbox
     city = event.target.getAttribute('data-name');
     displayWeather();
-    forecastValues();
-});
 
+});
 $(document).on("click", "#remove", function(event) {
     event.preventDefault();
     city = event.target.getAttribute('data-name');
@@ -114,17 +109,6 @@ $("#add-city").on("click", function(event) {
     // This line grabs the input from the textbox
     city = $("#city-input").val().trim();
     displayWeather();
-    forecastValues();
     $("#buttons-view").empty();
     createNsaveBtn();
-});
-$("#current-city").on("click", function(event) {
-    event.preventDefault();
-    jQuery(document).ready(function($) {
-        var currentCity = geoplugin_city();
-        city = currentCity;
-        displayWeather();
-        forecastValues();
-
-    });
 });
