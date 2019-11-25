@@ -121,7 +121,13 @@ $("#add-city").on("click", function(event) {
 $("#current-city").on("click", function(event) {
     event.preventDefault();
     jQuery(document).ready(function($) {
-        var currentCity = geoplugin_city();
+               $.ajax({
+            url: "https://geolocation-db.com/jsonp",
+            jsonpCallback: "callback",
+            dataType: "jsonp",
+            success: function(location) {
+                var currentCity = location.city;
+
         city = currentCity;
         displayWeather();
         forecastValues();
