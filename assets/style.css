@@ -1,13 +1,213 @@
 body {
-    background-color: #382100;
+    margin: 0;
+    height: 100%
+}
+
+.sky {
+    height: 1000px;
+    background: #007fd5;
+    position: relative;
+    overflow: hidden;
+    -webkit-animation: sky_background 1000s ease-out infinite;
+    -moz-animation: sky_background 1000s ease-out infinite;
+    -o-animation: sky_background 1000s ease-out infinite;
+    -webkit-transform: translate3d(0, 0, 0);
+    -moz-transform: translate3d(0, 0, 0);
+    -o-transform: translate3d(0, 0, 0)
+}
+
+.moon {
+    background: url("http://i.imgur.com/wFXd68N.png");
+    position: absolute;
+    left: 0;
+    height: 300%;
+    width: 300%;
+    -webkit-animation: moon 1000s linear infinite;
+    -moz-animation: moon 1000s linear infinite;
+    -o-animation: moon 1000s linear infinite;
+    -webkit-transform: translate3d(0, 0, 0);
+    -moz-transform: translate3d(0, 0, 0);
+    -o-transform: translate3d(0, 0, 0)
+}
+
+.clouds_one {
+    background: url("http://www.scri8e.com/stars/PNG_Clouds/zc06.png?filename=./zc06.png&w0=800&h0s=289&imgType=3&h1=50&w1=140");
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 300%;
+    -webkit-animation: cloud_one 1000s linear infinite;
+    -moz-animation: cloud_one 1000s linear infinite;
+    -o-animation: cloud_one 1000s linear infinite;
+    -webkit-transform: translate3d(0, 0, 0);
+    -moz-transform: translate3d(0, 0, 0);
+    -o-transform: translate3d(0, 0, 0)
+}
+
+.clouds_two {
+    background: url("http://freepngimages.com/wp-content/uploads/2016/02/clouds-transparent-background-2.png");
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 300%;
+    -webkit-animation: cloud_two 1050s linear infinite;
+    -moz-animation: cloud_two 1050s linear infinite;
+    -o-animation: cloud_two 1050s linear infinite;
+    -webkit-transform: translate3d(0, 0, 0);
+    -moz-transform: translate3d(0, 0, 0);
+    -o-transform: translate3d(0, 0, 0)
+}
+
+.clouds_three {
+    background: url("http://montanaflynn.me/lab/css-clouds/images/cloud_three.png");
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 300%;
+    -webkit-animation: cloud_three 1200s linear infinite;
+    -moz-animation: cloud_three 1200s linear infinite;
+    -o-animation: cloud_three 1200s linear infinite;
+    -webkit-transform: translate3d(0, 0, 0);
+    -moz-transform: translate3d(0, 0, 0);
+    -o-transform: translate3d(0, 0, 0)
+}
+
+@-webkit-keyframes sky_background {
+    0% {
+        background: #007fd5;
+        color: #007fd5
+    }
+    50% {
+        background: #000;
+        color: #a3d9ff
+    }
+    100% {
+        background: #007fd5;
+        color: #007fd5
+    }
+}
+
+@-webkit-keyframes moon {
+    0% {
+        opacity: 0;
+        left: -200% -moz-transform: scale(0.5);
+        -webkit-transform: scale(0.5);
+    }
+    50% {
+        opacity: 1;
+        -moz-transform: scale(1);
+        left: 0% bottom: 250px;
+        -webkit-transform: scale(1);
+    }
+    100% {
+        opacity: 0;
+        bottom: 500px;
+        -moz-transform: scale(0.5);
+        -webkit-transform: scale(0.5);
+    }
+}
+
+@-webkit-keyframes cloud_one {
+    0% {
+        left: 0
+    }
+    100% {
+        left: -200%
+    }
+}
+
+@-webkit-keyframes cloud_two {
+    0% {
+        left: 0
+    }
+    100% {
+        left: -200%
+    }
+}
+
+@-webkit-keyframes cloud_three {
+    0% {
+        left: 0
+    }
+    100% {
+        left: -200%
+    }
+}
+
+@-moz-keyframes sky_background {
+    0% {
+        background: #007fd5;
+        color: #007fd5
+    }
+    50% {
+        background: #000;
+        color: #a3d9ff
+    }
+    100% {
+        background: #007fd5;
+        color: #007fd5
+    }
+}
+
+@-moz-keyframes moon {
+    0% {
+        opacity: 0;
+        left: -200% -moz-transform: scale(0.5);
+        -webkit-transform: scale(0.5);
+    }
+    50% {
+        opacity: 1;
+        -moz-transform: scale(1);
+        left: 0% bottom: 250px;
+        -webkit-transform: scale(1);
+    }
+    100% {
+        opacity: 0;
+        bottom: 500px;
+        -moz-transform: scale(0.5);
+        -webkit-transform: scale(0.5);
+    }
+}
+
+@-moz-keyframes cloud_one {
+    0% {
+        left: 0
+    }
+    100% {
+        left: -200%
+    }
+}
+
+@-moz-keyframes cloud_two {
+    0% {
+        left: 0
+    }
+    100% {
+        left: -200%
+    }
+}
+
+@-moz-keyframes cloud_three {
+    0% {
+        left: 0
+    }
+    100% {
+        left: -200%
+    }
 }
 
 .navbar {
+    opacity: 0.7;
+    width: 100%;
     background-color: black;
     color: white;
 }
 
 h3 {
+    color: white;
     margin-left: 40%;
     text-shadow: 4px 4px 8px #cf9a50, 0 0 1em #cf9a50, 0 0 0.2em #cf9a50;
 }
@@ -23,10 +223,18 @@ h3 {
 }
 
 h4 {
-    color: beige;
+    background-color: black;
+    width: 100%;
+    margin-left: -5px;
+    margin-bottom: -5px;
+    opacity: 0.6;
+    padding: 15px;
+    color: white;
+    text-shadow: 4px 4px 8px #cf9a50, 0 0 1em #cf9a50, 0 0 0.2em #cf9a50;
 }
 
 h5 {
+    color: rgb(0, 88, 139);
     text-emphasis-color: green;
     text-emphasis-style: "*";
 }
@@ -34,11 +242,11 @@ h5 {
 #sidebox {
     position: relative;
     width: auto;
-    border-right: #fae6c9 2px double;
+    border-right: #abd8e6 2px double;
 }
 
 #city-form {
-    border-bottom: #fae6c9 2px double;
+    border-bottom: #abd8e6 2px double;
 }
 
 #city-input {
@@ -58,10 +266,11 @@ h5 {
 }
 
 #citybox {
-    border-bottom: #fae6c9 2px double;
+    border-bottom: #abd8e6 2px double;
 }
 
 #remove {
+    color: #00588b;
     border-top-right-radius: 40px;
     border-bottom-right-radius: 40px;
     border-bottom-left-radius: 40px;
@@ -70,7 +279,7 @@ h5 {
     text-align: center;
     position: relative;
     display: inline-block;
-    background-image: linear-gradient(white, #804a00);
+    background-image: linear-gradient(#abd8e6, #abd8e6);
     box-shadow: 0px 1px 4px -2px #333;
     text-shadow: 0px -1px #333;
 }
@@ -84,17 +293,19 @@ h5 {
 #add-city,
 #current-city,
 #city {
+    color: rgb(22, 145, 216);
     border-top-right-radius: 40px;
     border-bottom-right-radius: 40px;
     border-bottom-left-radius: 40px;
     background-color: black;
     width: 80%;
+    min-width: 130px;
     margin: 5px;
     padding: 5px 20px;
     text-align: center;
     position: relative;
     display: inline-block;
-    background-image: linear-gradient(white, #804a00);
+    background-image: linear-gradient(white, #abd8e6);
     box-shadow: 0px 1px 4px -2px #333;
     text-shadow: 0px -1px #333;
 }
@@ -115,17 +326,21 @@ h5 {
 }
 
 #city-view {
+    z-index: 2;
+    color: #00588b;
     position: relative;
     padding-left: 10px;
     margin-left: 5px;
-    background-image: linear-gradient(white, #cf9a50, white);
+    background-image: linear-gradient(white, #abd8e6, white);
     box-shadow: 5px 10px black;
     font-size: 20px;
     font-weight: 700;
 }
 
 .col-sm-2 {
-    background-image: linear-gradient(white, #cf9a50, white);
+    z-index: 2;
+    color: #00588b;
+    background-image: linear-gradient(white, #abd8e6, white);
     box-shadow: 5px 10px black;
     font-size: 12px;
     font-weight: 700;

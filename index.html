@@ -13,53 +13,60 @@
 </head>
 
 <body>
-    <header class="navbar navbar-fixed-top">
-        <h3 class="display-7 ">Weather Dashboard</h3>
-        <span id="currentDay" class="lead"></span>
-    </header>
+    <div class="sky">
+        <div class="moon"></div>
+        <div class="clouds_two"></div>
+        <div class="clouds_one"></div>
+        <div class="clouds_three"></div>
+        <header class="navbar navbar-fixed-top">
+            <h3 class="display-7 ">Weather Dashboard</h3>
+            <span id="currentDay" class="lead"></span>
+        </header>
 
-    <div class="container">
+        <div class="container">
 
-        <div class="row">
-            <div class="col-sm-3" id="sidebox">
-                <h4>Search for a City: </h4>
-                <form id="city-form">
-                    <label for="city-input"></label>
-                    <input type="text" id="city-input"><br>
-                    <input id="add-city" type="submit">
-                    <button id="current-city">Current City Weather</button>
-                </form>
-                <div id="buttons-view"></div>
-            </div>
-            <div class="col-sm-1"></div>
+            <div class="row">
+                <div class="col-sm-3" id="sidebox">
+                    <h4>Search for a City: </h4>
+                    <form id="city-form">
+                        <label for="city-input"></label>
+                        <input type="text" id="city-input"><br>
+                        <input id="add-city" type="submit">
+                        <button id="current-city">Current City Weather</button>
+                    </form>
+                    <div id="buttons-view"></div>
+                </div>
+                <div class="col-sm-1"></div>
 
-            <div class="col-sm-8" id="weatherview">
-                <div id="city-view"></div>
-                <div class="container">
-                    <div id="forecast"></div>
-                    <div class="row">
-                        <div class="col-sm-2">
-                            <div id="day4"></div>
-                        </div>
-                        <div class="col-sm-2">
-                            <div id="day10"></div>
-                        </div>
-                        <div class="col-sm-2">
-                            <div id="day18"></div>
-                        </div>
-                        <div class="col-sm-2">
-                            <div id="day26"></div>
-                        </div>
-                        <div class="col-sm-2">
-                            <div id="day34"></div>
+                <div class="col-sm-8" id="weatherview">
+                    <div id="city-view"></div>
+                    <div class="container">
+                        <div id="forecast"></div>
+                        <div class="row">
+                            <div class="col-sm-2">
+                                <div id="day4"></div>
+                            </div>
+                            <div class="col-sm-2">
+                                <div id="day10"></div>
+                            </div>
+                            <div class="col-sm-2">
+                                <div id="day18"></div>
+                            </div>
+                            <div class="col-sm-2">
+                                <div id="day26"></div>
+                            </div>
+                            <div class="col-sm-2">
+                                <div id="day34"></div>
+                            </div>
                         </div>
                     </div>
+
                 </div>
 
             </div>
-
         </div>
     </div>
+
 
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
