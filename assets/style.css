@@ -358,3 +358,16 @@ h5 {
         width: 100%;
     }
 }
+
+@media screen and (max-width:568px) {
+    .sky {
+        height: 1700px;
+    }
+    #forecast {
+        width: 100%;
+    }
+    .col-sm-2 {
+        margin: 20px;
+        width: 60%;
+    }
+}
