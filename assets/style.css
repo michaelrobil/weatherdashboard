@@ -361,7 +361,7 @@ h5 {
 
 @media screen and (max-width:568px) {
     .sky {
-        height: 1700px;
+        height: fit-content;
     }
     #forecast {
         width: 100%;
