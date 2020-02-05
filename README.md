@@ -1,27 +1,26 @@
 # Weather-Dashboard
-A weather dashboard application with search functionality to find current weather conditions and the future weather outlook for multiple cities.
- The web app. display the following under current weather conditions:
 
-  * City
+## About
+This web application is intended as a tool for users who want to search for weather conditions and the future outlook for current city and other cities.
 
-  * Date
+## Contributors
+[Michael Robil](https://github.com/michaelrobil)
 
-  * Icon image (visual representation of weather conditions)
+## Technology
+- HTML5, CSS
+- Javascript, jQuery, Ajax
+- APIs: openweather, geolocation
 
-  * Temperature
+## License
+Unlicense
 
-  * Humidity
+## How to use this code
+Visit the app site at Github below. If you wish to copy and edit the code.
+- Application Site: https://michaelrobil.github.io/weatherdashboard/
 
-  * Wind speed
+## Contact
 
-  * UV index
-  On the left side user will generate new buttons per city when search for it. The generated buttons will represent user search history so that users can access their past search terms. Clicking on the city name will perform a new search that returns current and future conditions for that city. 
-  Include a 5-Day Forecast below the current weather conditions. Each day for the 5-Day Forecast will display the following:
+- e-mail: michaelrobil@my-dev.online
+- LinkedIn: https://www.linkedin.com/in/michael-s-robil-60499869/
 
-  * Date
 
-  * Icon image (visual representation of weather conditions)
-
-  * Temperature
-
-  * Humidity
