@@ -1,7 +1,7 @@
 # Weather-Dashboard
 
 ## About
-This web application allows the user to know the weather conditions and the future outlook for current location and other countries.
+This web application allows the user to know the weather condition and the future outlook for current location and other countries.
 
 ## Application ScreenShot
 ![13-weather-dashboard](https://user-images.githubusercontent.com/56613553/74095973-32846300-4abe-11ea-80fd-1a4c50ed1dde.png)
