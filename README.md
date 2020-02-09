@@ -3,6 +3,9 @@
 ## About
 This web application is intended as a tool for users who want to search for weather conditions and the future outlook for current city and other cities.
 
+## Application ScreenShot
+![13-weather-dashboard](https://user-images.githubusercontent.com/56613553/74095973-32846300-4abe-11ea-80fd-1a4c50ed1dde.png)
+
 ## Contributors
 [Michael Robil](https://github.com/michaelrobil)
 
